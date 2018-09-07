@@ -75,7 +75,7 @@ Begin Window winMain
       LimitText       =   0
       LineHeight      =   0.0
       LineSpacing     =   1.0
-      LockBottom      =   False
+      LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
@@ -116,11 +116,11 @@ Begin Window winMain
       InitialParent   =   ""
       Italic          =   False
       Left            =   720
-      LockBottom      =   False
+      LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
-      LockTop         =   True
+      LockTop         =   False
       Scope           =   0
       TabIndex        =   2
       TabPanelIndex   =   0
@@ -148,11 +148,11 @@ Begin Window winMain
       Italic          =   False
       Left            =   720
       ListIndex       =   0
-      LockBottom      =   False
+      LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
-      LockTop         =   True
+      LockTop         =   False
       Scope           =   0
       TabIndex        =   3
       TabPanelIndex   =   0
@@ -222,8 +222,10 @@ End
 		    Dim xString As String = words( x - 1 )
 		    For y As Integer = 1 To Count + 1
 		      If words( y - 1 ) = xString Then
+		        g.ForeColor = FillColor
 		        g.FillRect( ( cellWidth * y ) - cellWidth, ( cellHeight * x ) - cellHeight, cellWidth, cellHeight )
 		      Else
+		        g.ForeColor = color.Clear
 		        g.DrawRect( ( cellWidth * y ) - cellWidth, ( cellHeight * x ) - cellHeight, cellWidth, cellHeight )
 		      End If
 		    Next
